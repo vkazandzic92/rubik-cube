@@ -1,5 +1,7 @@
 package com.eqs.rubik.cube.model;
 
+import com.eqs.rubik.cube.util.Colors;
+
 /**
  * Cube cell representation model.
  * Contains x,y,z axes and properties such us corner edge and colors.
@@ -11,15 +13,15 @@ public class Cell {
   private final int z;
   private final boolean corner;
   private final boolean edge;
-  private CellColor[] colors;
+  private Colors color;
 
-  public Cell(int x, int y, int z, CellColor[] colors, boolean corner, boolean edge) {
+  public Cell(int x, int y, int z, Colors color, boolean corner, boolean edge) {
     this.x = x;
     this.y = y;
     this.z = z;
     this.corner = corner;
     this.edge = edge;
-    this.colors = colors;
+    this.color = color;
   }
 
   public int getX() {
@@ -34,12 +36,12 @@ public class Cell {
     return z;
   }
 
-  public CellColor[] getColors() {
-    return colors;
+  public Colors getColor() {
+    return color;
   }
 
-  public void setColors(final CellColor[] colors) {
-    this.colors = colors;
+  public void setColor(final Colors color) {
+    this.color = color;
   }
 
   public boolean isCorner() {

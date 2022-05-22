@@ -1,5 +1,7 @@
 package com.eqs.rubik.cube.util;
 
+import java.util.Arrays;
+
 /**
  * Supported colors for the cube.
  * <ul>
@@ -20,13 +22,19 @@ public enum Colors {
     GREEN("G"),
     ORANGE("O");
 
-    private String color;
+    private String code;
 
-    Colors(String color) {
-      this.color = color;
+    Colors(String code) {
+      this.code = code;
     }
 
-    public String getColor() {
-      return color;
+    public String getCode() {
+        return code;
+    }
+
+    public static Colors getColorByCode(String code) {
+        return Arrays.stream(values())
+            .filter(bl -> bl.getCode().equals(code))
+            .findFirst().orElseThrow();
     }
 }
