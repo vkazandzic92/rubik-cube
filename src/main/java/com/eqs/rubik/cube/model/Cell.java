@@ -11,7 +11,7 @@ public class Cell {
   private final int z;
   private final boolean corner;
   private final boolean edge;
-  private final CellColor[] colors;
+  private CellColor[] colors;
 
   public Cell(int x, int y, int z, CellColor[] colors, boolean corner, boolean edge) {
     this.x = x;
@@ -36,6 +36,10 @@ public class Cell {
 
   public CellColor[] getColors() {
     return colors;
+  }
+
+  public void setColors(final CellColor[] colors) {
+    this.colors = colors;
   }
 
   public boolean isCorner() {
